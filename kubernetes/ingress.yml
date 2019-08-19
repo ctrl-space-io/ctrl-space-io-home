@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: "Ingress"
+metadata:
+  name: "ctrl-space-io-ingress"
+  namespace: "default"
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "hello-web-static-ip"
+
+spec:
+#  tls:
+#  - secretName: "
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: ctrl-space-io-home-web
+          servicePort: 30582

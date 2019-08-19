@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-web-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: hello-web-static-ip
+spec:
+  backend:
+    serviceName: hello-web
+    servicePort: 8080

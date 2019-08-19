@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: "Ingress"
+metadata:
+  name: "test-web-ingress"
+  namespace: "default"
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "test-web-static-ip"
+
+spec:
+#  tls: d
+#  - secretName: "
+  backend:
+    serviceName: test-webapp
+    servicePort: 8080

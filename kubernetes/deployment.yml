@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ctrl-space-io-home-web
+  labels:
+    app: ctrl-space-io-home-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ctrl-space-io-home-web
+  template:
+    metadata:
+      labels:
+        app: ctrl-space-io-home-web
+    spec:
+      containers:
+      - name: ctrl-space-io-home-web
+        image: deiveehan/ctrl-space-home:latest
+
